@@ -81,13 +81,13 @@ public class ProductsController {
     }
     
     @GetMapping("/lower_price/{Price}")
-    public ResponseEntity<List <Products>> getPriceLowerThan(@PathVariable double Price){
-    	return ResponseEntity.ok(productsRepository.findByPriceLessThanOrderByDesc(Price));
+    public ResponseEntity<List <Products>> getPriceLowerThan(@PathVariable double price){
+    	return ResponseEntity.ok(productsRepository.findByPriceLessThanOrderByPriceDesc(price));
     }
     
     @GetMapping("/greater_price/{Price}")
-    public ResponseEntity<List <Products>> getPriceGreaterThan(@PathVariable double Price){
-    	return ResponseEntity.ok(productsRepository.findByPriceGreaterThanOrderByDesc(Price));
+    public ResponseEntity<List <Products>> getPriceGreaterThan(@PathVariable double price){
+    	return ResponseEntity.ok(productsRepository.findByPriceGreaterThanOrderByPriceDesc(price));
     }
 }
 	

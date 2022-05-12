@@ -13,8 +13,8 @@ import com.generation.games_store.model.Products;
 public interface ProductsRepository extends JpaRepository<Products, Long> {
 	public List<Products> findAllByNameContainingIgnoreCase(@Param("name") String name);
 	
-	public List <Products> findByPriceLessThanOrderByDesc(double Price);
-	public List <Products> findByPriceGreaterThanOrderByDesc(double Price);
+	public List <Products> findByPriceLessThanOrderByPriceDesc(double price);
+	public List <Products> findByPriceGreaterThanOrderByPriceDesc(double price);
 	
 
 }
